@@ -1,3 +1,2 @@
-
 def generate():
     pass
