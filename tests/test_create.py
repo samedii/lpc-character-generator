@@ -34,7 +34,7 @@ def default_character():
 @pytest.mark.parametrize("direction", list(Direction))
 def test_direction_create(default_character, asset, direction):
     asset_type, asset_name = asset
-    path_to_asset = f"../tests/assets/{asset_type}.png"
+    path_to_asset = f"tests/assets/{asset_type}.png"
     additional_asset = Image.open(path_to_asset)
     additional_frames = [get_frame(DEFAULT_DIRECTION_ROW[direction], i, additional_asset) for i in range(2)]
     default_character["direction"] = direction
