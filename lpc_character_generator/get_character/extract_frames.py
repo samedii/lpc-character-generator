@@ -1,22 +1,18 @@
 from PIL import Image
-from lpc_character_generator.constants import (
-    Action,
-    Direction,
-    DEFAULT_DIRECTION_ROW,
-    DIRECTION_ROW,
-    FRAME_SIZE,
-)
+from typing import Optional
+from lpc_character_generator.constants import Action, Direction
 
-from lpc_character_generator.image_utilities import get_frame
+from .extract_direction_frames import extract_direction_frames
+from .extract_rotation_frames import extract_rotation_frames
 
 
 def extract_frames(
-    action_type: Action, direction: Direction, asset_image: Image.Image
+    action_type: Action,
+    direction: Optional[Direction],
+    rotation_column: Optional[int],
+    asset_image: Image.Image,
 ) -> list[Image.Image]:
-    width = asset_image.size[0]
-    direction_to_row = DIRECTION_ROW.get(action_type, DEFAULT_DIRECTION_ROW)
-    row = direction_to_row[direction]
-    frame_count = int(width / FRAME_SIZE)
+    if direction is None:
+        return extract_rotation_frames(rotation_column, asset_image)
 
-    frames = [get_frame(row, i, asset_image) for i in range(frame_count)]
-    return frames
+    return extract_direction_frames(action_type, direction, asset_image)

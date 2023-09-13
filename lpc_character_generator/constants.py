@@ -22,8 +22,12 @@ class Action(str, Enum):
     SWING = "Swing"
     CLIMB = "Climb"
     SLASH = "Slash"
-    EMOTES = "Emotes"
-    SITTING = "Sitting"
+    SITTING_CHAIR = "Sitting chair"
+    SITTING_CROSS = "Siting cross-leg"
+    SITTING_GROUND = "Sitting ground"
+    HANDS_BEHIND = "Hands behind back"
+    HANDS_HIPS = "Hands on hips"
+    EMOTE_AIR = "Emote in air"
     BACKSLASH = "Backslash"
     HALFSLASH = "Halfslash"
     COMBAT_IDLE = "Combat Idle"
@@ -66,6 +70,7 @@ SHARED_ASSETS = {
 
 PUT_ON_ORDER = [
     Asset.BODY,
+    Asset.EYES,
     Asset.EYEBROWS,
     Asset.HAIR,
     Asset.FACIAL_HAIR,
@@ -93,8 +98,12 @@ ACTION_TO_FILENAME = {
     Action.SWING: "Legacy - Swing",
     Action.CLIMB: "Climb",
     Action.SLASH: "Combat 1h - Slash",
-    Action.EMOTES: "Emotes",
-    Action.SITTING: "Sitting",
+    Action.SITTING_CHAIR: "sitting_chair",
+    Action.SITTING_CROSS: "sitting_cross",
+    Action.SITTING_GROUND: "sitting_ground",
+    Action.EMOTE_AIR: "emote_fall",
+    Action.HANDS_HIPS: "emote_hips",
+    Action.HANDS_BEHIND: "emote_behind",
     Action.BACKSLASH: "Combat 1h - Backslash",
     Action.HALFSLASH: "Combat 1h - Halfslash",
     Action.COMBAT_IDLE: "Combat 1h - Idle",
@@ -108,9 +117,9 @@ DEFAULT_DIRECTION_ROW = {
 }
 
 CLIMB_DIRECTION_ROW = {Direction.NORTH: 0}
-
 DIRECTION_ROW = {Action.CLIMB: CLIMB_DIRECTION_ROW}
 
 PATH_TO_DATA = importlib.resources.files("lpc_character_generator") / "data"
 
 FRAME_SIZE = 64
+ROTATION_ORDER = [Direction.SOUTH, Direction.EAST, Direction.NORTH, Direction.WEST]

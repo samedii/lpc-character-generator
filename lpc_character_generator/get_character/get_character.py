@@ -15,11 +15,13 @@ from .extract_frames import extract_frames
 def get_character(
     sex: Sex,
     action: Action,
-    direction: Direction,
     body: str,
+    direction: Direction = None,
+    rotation_column: int = None,
     hair: str = None,
     neck: str = None,
     head: str = None,
+    eyes: str = None,
     wings: str = None,
     shirt: str = None,
     pants: str = None,
@@ -40,6 +42,7 @@ def get_character(
         Asset.HAIR: hair,
         Asset.NECK: neck,
         Asset.HEAD: head,
+        Asset.EYES: eyes,
         Asset.WINGS: wings,
         Asset.SHIRT: shirt,
         Asset.PANTS: pants,
@@ -64,7 +67,9 @@ def get_character(
             continue
 
         asset_image = get_asset(sex, action, asset_type, asset_name)
-        extracted_frames = extract_frames(action, direction, asset_image)
+        extracted_frames = extract_frames(
+            action, direction, rotation_column, asset_image
+        )
 
         if not final_frames:
             final_frames = extracted_frames
