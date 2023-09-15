@@ -109,6 +109,25 @@ ACTION_TO_FILENAME = {
     Action.COMBAT_IDLE: "Combat 1h - Idle",
 }
 
+ACTION_TO_COLUMNS = {
+    Action.RUN: 8,
+    Action.WALK: 8,
+    Action.IDLE: 3,
+    Action.JUMP: 6,
+    Action.SWING: 6,
+    Action.CLIMB: 6,
+    Action.SLASH: 7,
+    Action.SITTING_CHAIR: 1,
+    Action.SITTING_CROSS: 1,
+    Action.SITTING_GROUND: 1,
+    Action.EMOTE_AIR: 1,
+    Action.HANDS_HIPS: 1,
+    Action.HANDS_BEHIND: 1,
+    Action.BACKSLASH: 12,
+    Action.HALFSLASH: 6,
+    Action.COMBAT_IDLE: 2,
+}
+
 DEFAULT_DIRECTION_ROW = {
     Direction.NORTH: 0,
     Direction.WEST: 1,
@@ -118,8 +137,41 @@ DEFAULT_DIRECTION_ROW = {
 
 CLIMB_DIRECTION_ROW = {Direction.NORTH: 0}
 DIRECTION_ROW = {Action.CLIMB: CLIMB_DIRECTION_ROW}
+CONFLICTING_ASSETS = {
+    Asset.HAIR: {Asset.HEAD, Asset.HEAD_ACCESSORY},
+    Asset.HEAD: {Asset.HAIR},
+    Asset.HEAD_ACCESSORY: {Asset.HAIR},
+}
 
 PATH_TO_DATA = importlib.resources.files("lpc_character_generator") / "data"
 
 FRAME_SIZE = 64
 ROTATION_ORDER = [Direction.SOUTH, Direction.EAST, Direction.NORTH, Direction.WEST]
+NON_ROTATION_ACTIONS = [Action.CLIMB]
+NON_OPTIONAL_ASSETS = {Asset.BODY, Asset.SHOES, Asset.SHIRT, Asset.SWORD}
+
+ALLOWED_DIRECTIONS = {
+    Action.CLIMB: [Direction.NORTH]
+}
+GENDERED_ASSETS = {Sex.WOMAN: {Asset.FACIAL_HAIR}}
+ASSET_TO_PARAM = {
+    Asset.BODY: "body",
+    Asset.HAIR: "hair",
+    Asset.NECK: "neck",
+    Asset.EYES: "eyes",
+    Asset.HEAD: "head",
+    Asset.WINGS: "wings",
+    Asset.SHIRT: "shirt",
+    Asset.PANTS: "pants",
+    Asset.SHOES: "shoes",
+    Asset.SOCKS: "socks",
+    Asset.SWORD: "sword",
+    Asset.EYEBROWS: "eyebrows",
+    Asset.OVER_SHIRT: "over_shirt",
+    Asset.FACIAL_HAIR: "facial_hair",
+    Asset.SHIELD_BASE: "shield_base",
+    Asset.SHIELD_TRIM: "shield_trim",
+    Asset.SHIELD_PAINT: "shield_paint",
+    Asset.SHIELD_PATTERN: "shield_pattern",
+    Asset.HEAD_ACCESSORY: "head_accessory",
+}

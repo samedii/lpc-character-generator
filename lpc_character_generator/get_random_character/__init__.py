@@ -1,0 +1,1 @@
+from .get_random_character import get_random_character
