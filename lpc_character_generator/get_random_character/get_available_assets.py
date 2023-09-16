@@ -15,7 +15,10 @@ def get_available_assets(sex: Sex, asset_type: Asset, action: Action):
                 continue
 
             # if one asset of the subtype has the action, assume all of them do
-            first_asset = next((asset for asset in subtype_path.iterdir() if asset.stem != "_Behind"), None)
+            first_asset = next(
+                (asset for asset in subtype_path.iterdir() if asset.stem != "_Behind"),
+                None,
+            )
             if first_asset and has_action(action, first_asset):
                 last_directories.extend(
                     (asset, f"{subtype_path.stem} {asset.stem}")
@@ -23,7 +26,10 @@ def get_available_assets(sex: Sex, asset_type: Asset, action: Action):
                     if asset.stem != "_Behind"
                 )
     else:
-        first_asset = next((asset for asset in path_to_assets.iterdir() if asset.stem != "_Behind"), None)
+        first_asset = next(
+            (asset for asset in path_to_assets.iterdir() if asset.stem != "_Behind"),
+            None,
+        )
         if first_asset and has_action(action, first_asset):
             last_directories = [
                 (path, f"{path.stem}")

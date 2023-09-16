@@ -66,18 +66,27 @@ def get_character(
         if asset_name is None:
             continue
 
-        asset_image = get_asset(sex, action, asset_type, asset_name)
-        extracted_frames = extract_frames(
-            action, direction, rotation_column, asset_image
+        asset_front, asset_behind = get_asset(sex, action, asset_type, asset_name)
+        front_frames = extract_frames(action, direction, rotation_column, asset_front)
+        back_frames = (
+            extract_frames(action, direction, rotation_column, asset_behind)
+            if asset_behind is not None
+            else None
         )
 
         if not final_frames:
-            final_frames = extracted_frames
+            final_frames = front_frames
             continue
 
         final_frames = [
             add_asset(base, addition)
-            for base, addition in zip(final_frames, extracted_frames)
+            for base, addition in zip(final_frames, front_frames)
         ]
+
+        if back_frames is not None:
+            final_frames = [
+                add_asset(base, addition)
+                for base, addition in zip(back_frames, final_frames)
+            ]
 
     return final_frames
