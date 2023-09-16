@@ -143,9 +143,7 @@ CONFLICTING_ASSETS = {
     Asset.HEAD: {Asset.HAIR},
     Asset.HEAD_ACCESSORY: {Asset.HAIR},
 }
-ASSET_COMPLEMENTARITY = {
-    Asset.HEAD_ACCESSORY: Asset.HEAD
-}
+ASSET_COMPLEMENTARITY = {Asset.HEAD_ACCESSORY: Asset.HEAD}
 
 PATH_TO_DATA = importlib.resources.files("lpc_character_generator") / "data"
 
@@ -154,9 +152,7 @@ ROTATION_ORDER = [Direction.SOUTH, Direction.EAST, Direction.NORTH, Direction.WE
 NON_ROTATION_ACTIONS = [Action.CLIMB]
 NON_OPTIONAL_ASSETS = {Asset.BODY, Asset.SHOES, Asset.SHIRT, Asset.SWORD}
 
-ALLOWED_DIRECTIONS = {
-    Action.CLIMB: [Direction.NORTH]
-}
+ALLOWED_DIRECTIONS = {Action.CLIMB: [Direction.NORTH]}
 GENDERED_ASSETS = {Sex.WOMAN: {Asset.FACIAL_HAIR}}
 ASSET_TO_PARAM = {
     Asset.BODY: "body",
