@@ -137,15 +137,19 @@ DEFAULT_DIRECTION_ROW = {
 
 CLIMB_DIRECTION_ROW = {Direction.NORTH: 0}
 DIRECTION_ROW = {Action.CLIMB: CLIMB_DIRECTION_ROW}
+
 CONFLICTING_ASSETS = {
     Asset.HAIR: {Asset.HEAD, Asset.HEAD_ACCESSORY},
     Asset.HEAD: {Asset.HAIR},
     Asset.HEAD_ACCESSORY: {Asset.HAIR},
 }
+ASSET_COMPLEMENTARITY = {
+    Asset.HEAD_ACCESSORY: Asset.HEAD
+}
 
 PATH_TO_DATA = importlib.resources.files("lpc_character_generator") / "data"
 
-FRAME_SIZE = 64
+FRAME_SIZE = 128
 ROTATION_ORDER = [Direction.SOUTH, Direction.EAST, Direction.NORTH, Direction.WEST]
 NON_ROTATION_ACTIONS = [Action.CLIMB]
 NON_OPTIONAL_ASSETS = {Asset.BODY, Asset.SHOES, Asset.SHIRT, Asset.SWORD}
