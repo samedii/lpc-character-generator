@@ -15,14 +15,13 @@ _TEST_ASSETS = {
     "shoes": "shoes ice",
     "eyebrows": "thick blonde",
     "eyes": "eyes gray",
-    "head": "bascinet, closed gold",
+    "head": "bascinet closed gold",
     "head_accessory": "bascinet plumage coffee",
     "shield_base": "brown",
     "shield_paint": "apple",
     "shield_pattern": "barry apricot",
     "facial_hair": "chevron mustache blonde",
     "shield_trim": "copper",
-    "sword": "sword silver"
 }
 
 @pytest.fixture
