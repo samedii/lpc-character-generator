@@ -143,7 +143,12 @@ CONFLICTING_ASSETS = {
     Asset.HEAD: {Asset.HAIR},
     Asset.HEAD_ACCESSORY: {Asset.HAIR},
 }
-ASSET_COMPLEMENTARITY = {Asset.HEAD_ACCESSORY: Asset.HEAD}
+ASSET_COMPLEMENTARITY = {
+    Asset.HEAD_ACCESSORY: (Asset.HEAD, {"Bascinet", "Morion"}),
+    Asset.SHIELD_TRIM: (Asset.SHIELD_BASE, {}),
+    Asset.SHIELD_PAINT: (Asset.SHIELD_BASE, {}),
+    Asset.SHIELD_PATTERN: (Asset.SHIELD_BASE, {}),
+}
 
 PATH_TO_DATA = importlib.resources.files("lpc_character_generator") / "data"
 

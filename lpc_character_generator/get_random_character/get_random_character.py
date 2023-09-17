@@ -4,19 +4,21 @@ from typing import Optional
 from lpc_character_generator.get_character import get_character
 from lpc_character_generator.constants import (
     Sex,
-    Asset,
     Action,
     Direction,
+    PUT_ON_ORDER,
     ASSET_TO_PARAM,
     GENDERED_ASSETS,
     ALLOWED_DIRECTIONS,
     NON_OPTIONAL_ASSETS,
+    ASSET_COMPLEMENTARITY,
 )
 
 from .should_rotate import should_rotate
+from .assets_conflict import assets_conflict
 from .get_random_column import get_random_column
 from .get_available_assets import get_available_assets
-from .assets_conflict import assets_conflict
+from .get_by_complementarity import get_by_complementarity
 
 
 def get_random_character(
@@ -30,9 +32,8 @@ def get_random_character(
     sex = random.choice(list(Sex))
     action = random.choice(list(Action)) if action is None else action
     direction_pool = ALLOWED_DIRECTIONS.get(action, list(Direction))
-    possible_assets = {asset_type for asset_type in Asset} - GENDERED_ASSETS.get(
-        sex, set()
-    )
+    gendered_set = GENDERED_ASSETS.get(sex, set())
+    possible_assets = [x for x in PUT_ON_ORDER if x not in gendered_set]
 
     if direction is None and do_rotation is None:
         do_rotation = should_rotate(action)
@@ -48,7 +49,12 @@ def get_random_character(
         ):
             continue
 
-        available_assets = get_available_assets(sex, asset_type, action)
+        is_complementary = asset_type in ASSET_COMPLEMENTARITY
+        available_assets = (
+            get_available_assets(sex, asset_type, action)
+            if not is_complementary
+            else get_by_complementarity(sex, action, asset_type, included_assets)
+        )
 
         if not available_assets:
             continue
