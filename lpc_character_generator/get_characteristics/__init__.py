@@ -1,0 +1,1 @@
+from .get_characteristics import get_characteristics

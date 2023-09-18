@@ -2,6 +2,8 @@ import random
 
 from typing import Optional
 from lpc_character_generator.get_character import get_character
+from lpc_character_generator.get_characteristics import get_characteristics
+from lpc_character_generator.get_character_description import get_character_description
 from lpc_character_generator.constants import (
     Sex,
     Action,
@@ -72,7 +74,9 @@ def get_random_character(
 
     if do_rotation:
         settings["rotation_column"] = get_random_column(action)
+    characteristics = get_characteristics(included_assets)
 
+    character["description"] = get_character_description(sex, characteristics)
     character["animation"] = get_character(**settings)
     settings["do_rotation"] = False if do_rotation is None else do_rotation
     character["settings"] = settings
