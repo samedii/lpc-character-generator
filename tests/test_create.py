@@ -3,7 +3,13 @@ import numpy as np
 import lpc_character_generator as generator
 
 from PIL import Image
-from lpc_character_generator.constants import Direction, Action, Sex, DEFAULT_DIRECTION_ROW, ROTATION_ORDER
+from lpc_character_generator.constants import (
+    Direction,
+    Action,
+    Sex,
+    DEFAULT_DIRECTION_ROW,
+    ROTATION_ORDER,
+)
 from lpc_character_generator.image_utilities import get_frame, add_asset
 
 _TEST_ASSETS = {
@@ -24,6 +30,7 @@ _TEST_ASSETS = {
     "shield_trim": "copper",
 }
 
+
 @pytest.fixture
 def default_character():
     return {"sex": Sex.MAN, "body": "old porcelain", "action": Action.COMBAT_IDLE}
@@ -35,7 +42,10 @@ def test_direction_create(default_character, asset, direction):
     asset_type, asset_name = asset
     path_to_asset = f"tests/assets/{asset_type}.png"
     additional_asset = Image.open(path_to_asset)
-    additional_frames = [get_frame(DEFAULT_DIRECTION_ROW[direction], i, additional_asset) for i in range(2)]
+    additional_frames = [
+        get_frame(DEFAULT_DIRECTION_ROW[direction], i, additional_asset)
+        for i in range(2)
+    ]
     default_character["direction"] = direction
     new_character_settings = default_character.copy()
     new_character_settings[asset_type] = asset_name
@@ -43,8 +53,7 @@ def test_direction_create(default_character, asset, direction):
     base_character = generator.create(**default_character)
     new_character = generator.create(**new_character_settings)
     test_character = [
-        add_asset(base, new)
-        for new, base in zip(additional_frames, base_character)
+        add_asset(base, new) for new, base in zip(additional_frames, base_character)
     ]
 
     np_new = [np.array(frame) for frame in new_character]
@@ -60,7 +69,9 @@ def test_rotation_create(default_character, asset, rotation_column):
     path_to_asset = f"tests/assets/{asset_type}.png"
     additional_asset = Image.open(path_to_asset)
     index_order = [DEFAULT_DIRECTION_ROW[direction] for direction in ROTATION_ORDER]
-    additional_frames = [get_frame(i, rotation_column, additional_asset) for i in index_order]
+    additional_frames = [
+        get_frame(i, rotation_column, additional_asset) for i in index_order
+    ]
     default_character["rotation_column"] = rotation_column
     new_character_settings = default_character.copy()
     new_character_settings[asset_type] = asset_name
@@ -68,8 +79,7 @@ def test_rotation_create(default_character, asset, rotation_column):
     base_character = generator.create(**default_character)
     new_character = generator.create(**new_character_settings)
     test_character = [
-        add_asset(base, new)
-        for new, base in zip(additional_frames, base_character)
+        add_asset(base, new) for new, base in zip(additional_frames, base_character)
     ]
 
     np_new = [np.array(frame) for frame in new_character]

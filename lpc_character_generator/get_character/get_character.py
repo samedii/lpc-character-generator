@@ -9,6 +9,8 @@ from lpc_character_generator.constants import (
 )
 from .get_asset import get_asset
 from .extract_frames import extract_frames
+
+
 def get_character(
     sex: Sex,
     action: Action,
