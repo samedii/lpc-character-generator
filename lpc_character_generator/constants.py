@@ -154,7 +154,7 @@ PATH_TO_DATA = importlib.resources.files("lpc_character_generator") / "data"
 
 FRAME_SIZE = 128
 ROTATION_ORDER = [Direction.SOUTH, Direction.EAST, Direction.NORTH, Direction.WEST]
-NON_ROTATION_ACTIONS = [Action.CLIMB]
+NON_ROTATION_ACTIONS = {Action.CLIMB}
 NON_OPTIONAL_ASSETS = {Asset.BODY, Asset.SHOES, Asset.SHIRT, Asset.SWORD}
 
 ALLOWED_DIRECTIONS = {Action.CLIMB: [Direction.NORTH]}

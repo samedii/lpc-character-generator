@@ -13,6 +13,7 @@ from lpc_character_generator.constants import (
     GENDERED_ASSETS,
     ALLOWED_DIRECTIONS,
     NON_OPTIONAL_ASSETS,
+    NON_ROTATION_ACTIONS,
     ASSET_COMPLEMENTARITY,
 )
 
@@ -32,7 +33,10 @@ def get_random_character(
     character = {}
     included_assets = {}
     sex = random.choice(list(Sex))
-    action = random.choice(list(Action)) if action is None else action
+    available_actions = (
+        list(Action) if not do_rotation else list(set(Action) - NON_ROTATION_ACTIONS)
+    )
+    action = random.choice(available_actions) if action is None else action
     direction_pool = ALLOWED_DIRECTIONS.get(action, list(Direction))
     gendered_set = GENDERED_ASSETS.get(sex, set())
     possible_assets = [x for x in PUT_ON_ORDER if x not in gendered_set]
