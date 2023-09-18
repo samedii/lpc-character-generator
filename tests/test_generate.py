@@ -48,7 +48,7 @@ def test_generate(params):
     for index, images in enumerate(generated_characters):
         animation = Image.fromarray(np.concatenate(images, axis=1))
         animation.save(
-            f"../tests/results/{character_prefixes[index % len(inputs)]}_{index}.png"
+            f"tests/results/{character_prefixes[index % len(inputs)]}_{index}.png"
         )
 
     assert (end_time - start_time) / (len(inputs) * n_times) <= 0.1
