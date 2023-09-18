@@ -73,7 +73,8 @@ def get_random_character(
     if do_rotation:
         settings["rotation_column"] = get_random_column(action)
 
-    character["settings"] = settings
     character["animation"] = get_character(**settings)
+    settings["do_rotation"] = False if do_rotation is None else do_rotation
+    character["settings"] = settings
 
     return character

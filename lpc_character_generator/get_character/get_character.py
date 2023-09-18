@@ -7,11 +7,8 @@ from lpc_character_generator.constants import (
     Asset,
     PUT_ON_ORDER,
 )
-
 from .get_asset import get_asset
 from .extract_frames import extract_frames
-
-
 def get_character(
     sex: Sex,
     action: Action,
@@ -59,7 +56,7 @@ def get_character(
         Asset.HEAD_ACCESSORY: head_accessory,
     }
 
-    final_asset = None
+    final_frames = []
     for asset_type in PUT_ON_ORDER:
         asset_name = asset_type_to_value[asset_type]
 
@@ -67,16 +64,26 @@ def get_character(
             continue
 
         asset_front, asset_behind = get_asset(sex, action, asset_type, asset_name)
+        front_frames = extract_frames(action, direction, rotation_column, asset_front)
+        back_frames = (
+            extract_frames(action, direction, rotation_column, asset_behind)
+            if asset_behind is not None
+            else None
+        )
 
-        if not final_asset:
-            final_asset = asset_front
+        if not final_frames:
+            final_frames = front_frames
             continue
 
-        if asset_behind is not None:
-            final_asset = add_asset(asset_behind, final_asset)
+        final_frames = [
+            add_asset(base, addition)
+            for base, addition in zip(final_frames, front_frames)
+        ]
 
-        final_asset = add_asset(final_asset, asset_front)
-
-    final_frames = extract_frames(action, direction, rotation_column, final_asset)
+        if back_frames is not None:
+            final_frames = [
+                add_asset(base, addition)
+                for base, addition in zip(back_frames, final_frames)
+            ]
 
     return final_frames
