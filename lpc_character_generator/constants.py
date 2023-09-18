@@ -180,3 +180,26 @@ ASSET_TO_PARAM = {
     Asset.SHIELD_PATTERN: "shield_pattern",
     Asset.HEAD_ACCESSORY: "head_accessory",
 }
+
+NO_DESCRIPTION_ASSETS = {
+    Asset.EYEBROWS,
+    Asset.SHIELD_PAINT,
+    Asset.SHIELD_TRIM,
+    Asset.SHIELD_PAINT,
+    Asset.SHIELD_BASE,
+    Asset.SHIELD_PATTERN,
+}
+WITH_ASSETS = [
+    Asset.HAIR,
+    Asset.HEAD,
+    Asset.WINGS,
+    Asset.SOCKS,
+    Asset.EYES,
+    Asset.SHIRT,
+    Asset.NECK,
+    Asset.PANTS,
+    Asset.SHOES,
+    Asset.OVER_SHIRT,
+    Asset.HEAD_ACCESSORY
+]
+MAX_ITEMS = 2
