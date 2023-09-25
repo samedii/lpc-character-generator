@@ -29,6 +29,7 @@ class Action(str, Enum):
     HANDS_HIPS = "Hands on hips"
     EMOTE_AIR = "Emote in air"
     BACKSLASH = "Backslash"
+    FORWARD_SLASH = "Forward slash"
     HALFSLASH = "Halfslash"
     COMBAT_IDLE = "Combat Idle"
 
@@ -104,7 +105,8 @@ ACTION_TO_FILENAME = {
     Action.EMOTE_AIR: "emote_fall",
     Action.HANDS_HIPS: "emote_hips",
     Action.HANDS_BEHIND: "emote_behind",
-    Action.BACKSLASH: "Combat 1h - Backslash",
+    Action.BACKSLASH: "Combat 1h - backward",
+    Action.FORWARD_SLASH: "Combat 1h - forward",
     Action.HALFSLASH: "Combat 1h - Halfslash",
     Action.COMBAT_IDLE: "Combat 1h - Idle",
 }
@@ -123,7 +125,8 @@ ACTION_TO_COLUMNS = {
     Action.EMOTE_AIR: 1,
     Action.HANDS_HIPS: 1,
     Action.HANDS_BEHIND: 1,
-    Action.BACKSLASH: 12,
+    Action.BACKSLASH: 6,
+    Action.FORWARD_SLASH: 6,
     Action.HALFSLASH: 6,
     Action.COMBAT_IDLE: 2,
 }
@@ -218,7 +221,8 @@ ACTION_DESCRIPTIONS = {
     Action.HANDS_BEHIND: "hands behind back",
     Action.HANDS_HIPS: "hands on hips",
     Action.EMOTE_AIR: "falling",
-    Action.BACKSLASH: "forward and backslash attack",
+    Action.BACKSLASH: "backslash attack",
+    Action.FORWARD_SLASH: "slash attack",
     Action.HALFSLASH: "half slash attack",
     Action.COMBAT_IDLE: "idle",
 }
