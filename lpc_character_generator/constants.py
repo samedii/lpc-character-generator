@@ -212,7 +212,7 @@ ACTION_DESCRIPTIONS = {
     Action.SWING: "horizontal slash attack",
     Action.CLIMB: "climb",
     Action.SLASH: "horizontal slash attack",
-    Action.SITTING_CHAIR: "s    itting on invisible chair",
+    Action.SITTING_CHAIR: "sitting on invisible chair",
     Action.SITTING_CROSS: "sitting cross-legged",
     Action.SITTING_GROUND: "sitting on ground",
     Action.HANDS_BEHIND: "hands behind back",
