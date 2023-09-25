@@ -200,6 +200,25 @@ WITH_ASSETS = [
     Asset.PANTS,
     Asset.SHOES,
     Asset.OVER_SHIRT,
-    Asset.HEAD_ACCESSORY
+    Asset.HEAD_ACCESSORY,
 ]
 MAX_ITEMS = 2
+
+ACTION_DESCRIPTIONS = {
+    Action.RUN: "run",
+    Action.WALK: "walk",
+    Action.IDLE: "idle",
+    Action.JUMP: "jump",
+    Action.SWING: "horizontal slash attack",
+    Action.CLIMB: "climb",
+    Action.SLASH: "horizontal slash attack",
+    Action.SITTING_CHAIR: "s    itting on invisible chair",
+    Action.SITTING_CROSS: "sitting cross-legged",
+    Action.SITTING_GROUND: "sitting on ground",
+    Action.HANDS_BEHIND: "hands behind back",
+    Action.HANDS_HIPS: "hands on hips",
+    Action.EMOTE_AIR: "falling",
+    Action.BACKSLASH: "forward and backslash attack",
+    Action.HALFSLASH: "half slash attack",
+    Action.COMBAT_IDLE: "idle",
+}

@@ -12,6 +12,7 @@ from lpc_character_generator.constants import (
     ASSET_TO_PARAM,
     GENDERED_ASSETS,
     ALLOWED_DIRECTIONS,
+    ACTION_DESCRIPTIONS,
     NON_OPTIONAL_ASSETS,
     NON_ROTATION_ACTIONS,
     ASSET_COMPLEMENTARITY,
@@ -80,6 +81,7 @@ def get_random_character(
         settings["rotation_column"] = get_random_column(action)
     characteristics = get_characteristics(included_assets)
 
+    character["action_description"] = ACTION_DESCRIPTIONS[action]
     character["description"] = get_character_description(sex, characteristics)
     character["animation"] = get_character(**settings)
     settings["do_rotation"] = False if do_rotation is None else do_rotation

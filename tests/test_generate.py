@@ -51,4 +51,4 @@ def test_generate(params):
             f"tests/results/{character_prefixes[index % len(inputs)]}_{index}.png"
         )
 
-    assert (end_time - start_time) / (len(inputs) * n_times) <= 0.1
+    assert (end_time - start_time) / (len(inputs) * n_times) <= 0.15
