@@ -18,27 +18,18 @@ def get_available_assets(
             ):
                 continue
 
-            # if one asset of the subtype has the action, assume all of them do
-            first_asset = next(
-                (asset for asset in subtype_path.iterdir() if asset.stem != "_Behind"),
-                None,
-            )
-            if first_asset and has_action(action, first_asset):
+            if has_action(action, subtype_path):
                 last_directories.extend(
-                    (asset, f"{subtype_path.stem} {asset.stem}")
+                    f"{subtype_path.stem} {asset.stem}"
                     for asset in subtype_path.iterdir()
                     if asset.stem != "_Behind"
                 )
     else:
-        first_asset = next(
-            (asset for asset in path_to_assets.iterdir() if asset.stem != "_Behind"),
-            None,
-        )
-        if first_asset and has_action(action, first_asset):
+        if has_action(action, path_to_assets):
             last_directories = [
-                (path, f"{path.stem}")
+                f"{path.stem}"
                 for path in path_to_assets.iterdir()
-                if path.stem != "_Behind" and has_action(action, path)
-            ]  # This is a temporary solution
+                if path.stem != "_Behind"
+            ]
 
     return last_directories

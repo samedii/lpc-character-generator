@@ -78,7 +78,7 @@ def get_random_character(
         if not available_assets:
             continue
 
-        _, chosen_asset = random.choice(available_assets)
+        chosen_asset = random.choice(available_assets)
 
         settings[asset_type] = chosen_asset
         included_assets[asset_type] = chosen_asset
