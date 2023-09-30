@@ -35,25 +35,25 @@ class Action(str, Enum):
 
 
 class Asset(str, Enum):
-    BODY = "Body"
-    HAIR = "Hair"
-    NECK = "Neck"
-    EYES = "Eyes"
-    HEAD = "Head"
-    WINGS = "Wings"
-    SHIRT = "Shirt"
-    PANTS = "Pants"
-    SHOES = "Shoes"
-    SOCKS = "Socks"
-    SWORD = "Sword"
-    EYEBROWS = "Eyebrows"
-    OVER_SHIRT = "Over Shirt"
-    FACIAL_HAIR = "Facial Hair"
-    SHIELD_BASE = "Shield Base"
-    SHIELD_TRIM = "Shield Trim"
-    SHIELD_PAINT = "Shield Paint"
-    SHIELD_PATTERN = "Shield Pattern"
-    HEAD_ACCESSORY = "Head Accessory"
+    BODY = "body"
+    HAIR = "hair"
+    NECK = "neck"
+    EYES = "eyes"
+    HEAD = "head"
+    WINGS = "wings"
+    SHIRT = "shirt"
+    PANTS = "pants"
+    SHOES = "shoes"
+    SOCKS = "socks"
+    SWORD = "sword"
+    EYEBROWS = "eyebrows"
+    OVER_SHIRT = "over_shirt"
+    FACIAL_HAIR = "facial_hair"
+    SHIELD_BASE = "shield_base"
+    SHIELD_TRIM = "shield_trim"
+    SHIELD_PAINT = "shield_paint"
+    SHIELD_PATTERN = "shield_pattern"
+    HEAD_ACCESSORY = "head_accessory"
 
 
 SHARED_ASSETS = {
@@ -162,26 +162,27 @@ NON_OPTIONAL_ASSETS = {Asset.BODY, Asset.SHOES, Asset.SHIRT, Asset.SWORD}
 
 ALLOWED_DIRECTIONS = {Action.CLIMB: [Direction.NORTH]}
 GENDERED_ASSETS = {Sex.WOMAN: {Asset.FACIAL_HAIR}}
-ASSET_TO_PARAM = {
-    Asset.BODY: "body",
-    Asset.HAIR: "hair",
-    Asset.NECK: "neck",
-    Asset.EYES: "eyes",
-    Asset.HEAD: "head",
-    Asset.WINGS: "wings",
-    Asset.SHIRT: "shirt",
-    Asset.PANTS: "pants",
-    Asset.SHOES: "shoes",
-    Asset.SOCKS: "socks",
-    Asset.SWORD: "sword",
-    Asset.EYEBROWS: "eyebrows",
-    Asset.OVER_SHIRT: "over_shirt",
-    Asset.FACIAL_HAIR: "facial_hair",
-    Asset.SHIELD_BASE: "shield_base",
-    Asset.SHIELD_TRIM: "shield_trim",
-    Asset.SHIELD_PAINT: "shield_paint",
-    Asset.SHIELD_PATTERN: "shield_pattern",
-    Asset.HEAD_ACCESSORY: "head_accessory",
+
+ASSET_TO_FILENAME = {
+    Asset.BODY: "Body",
+    Asset.HAIR: "Hair",
+    Asset.NECK: "Neck",
+    Asset.EYES: "Eyes",
+    Asset.HEAD: "Head",
+    Asset.WINGS: "Wings",
+    Asset.SHIRT: "Shirt",
+    Asset.PANTS: "Pants",
+    Asset.SHOES: "Shoes",
+    Asset.SOCKS: "Socks",
+    Asset.SWORD: "Sword",
+    Asset.EYEBROWS: "Eyebrows",
+    Asset.OVER_SHIRT: "Over Shirt",
+    Asset.FACIAL_HAIR: "Facial Hair",
+    Asset.SHIELD_BASE: "Shield Base",
+    Asset.SHIELD_TRIM: "Shield Trim",
+    Asset.SHIELD_PAINT: "Shield Paint",
+    Asset.SHIELD_PATTERN: "Shield Pattern",
+    Asset.HEAD_ACCESSORY: "Head Accessory",
 }
 
 NO_DESCRIPTION_ASSETS = {

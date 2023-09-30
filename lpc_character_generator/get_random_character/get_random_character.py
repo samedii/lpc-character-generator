@@ -9,7 +9,6 @@ from lpc_character_generator.constants import (
     Action,
     Direction,
     PUT_ON_ORDER,
-    ASSET_TO_PARAM,
     GENDERED_ASSETS,
     ALLOWED_DIRECTIONS,
     ACTION_DESCRIPTIONS,
@@ -26,10 +25,18 @@ from .get_by_complementarity import get_by_complementarity
 
 
 def get_random_character(
-    action: Optional[Action],
-    direction: Optional[Direction],
-    do_rotation: Optional[bool],
+    action: Optional[Action] = None,
+    direction: Optional[Direction] = None,
+    do_rotation: Optional[bool] = None,
+    to_include: set = None,
+    to_exclude: set = None,
+    non_optional_assets=NON_OPTIONAL_ASSETS,
 ) -> dict:
+    if to_exclude is None:
+        to_exclude = set()
+    if to_include is None:
+        to_include = set()
+
     settings = {}
     character = {}
     included_assets = {}
@@ -50,9 +57,14 @@ def get_random_character(
 
     for asset_type in possible_assets:
         skip = random.randint(0, 1)
+        is_optional = (
+            asset_type not in non_optional_assets and asset_type not in to_include
+        )
 
-        if (skip and asset_type not in NON_OPTIONAL_ASSETS) or assets_conflict(
-            included_assets, asset_type
+        if (
+            asset_type in to_exclude
+            or (skip and is_optional)
+            or assets_conflict(included_assets, asset_type)
         ):
             continue
 
@@ -68,8 +80,7 @@ def get_random_character(
 
         _, chosen_asset = random.choice(available_assets)
 
-        param = ASSET_TO_PARAM[asset_type]
-        settings[param] = chosen_asset
+        settings[asset_type] = chosen_asset
         included_assets[asset_type] = chosen_asset
 
     settings["sex"] = sex
