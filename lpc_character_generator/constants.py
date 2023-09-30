@@ -56,6 +56,12 @@ class Asset(str, Enum):
     HEAD_ACCESSORY = "head_accessory"
 
 
+class ClothingState(str, Enum):
+    NAKED = "naked"
+    F_CLOTHED = "fully clothed"
+    P_CLOTHED = "partially clothed"
+
+
 SHARED_ASSETS = {
     Asset.EYES,
     Asset.HEAD,
@@ -160,6 +166,11 @@ ROTATION_ORDER = [Direction.SOUTH, Direction.EAST, Direction.NORTH, Direction.WE
 NON_ROTATION_ACTIONS = {Action.CLIMB}
 NON_OPTIONAL_ASSETS = {Asset.BODY, Asset.SHOES, Asset.SHIRT, Asset.SWORD}
 
+UNAVAILABLE_ACTIONS = {
+    Direction.SOUTH: {Action.CLIMB},
+    Direction.EAST: {Action.CLIMB},
+    Direction.WEST: {Action.CLIMB},
+}
 ALLOWED_DIRECTIONS = {Action.CLIMB: [Direction.NORTH]}
 GENDERED_ASSETS = {Sex.WOMAN: {Asset.FACIAL_HAIR}}
 

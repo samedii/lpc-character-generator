@@ -21,6 +21,7 @@ from .should_rotate import should_rotate
 from .assets_conflict import assets_conflict
 from .get_random_column import get_random_column
 from .get_available_assets import get_available_assets
+from .get_available_actions import get_available_actions
 from .get_by_complementarity import get_by_complementarity
 
 
@@ -41,9 +42,9 @@ def get_random_character(
     character = {}
     included_assets = {}
     sex = random.choice(list(Sex))
-    available_actions = (
-        list(Action) if not do_rotation else list(set(Action) - NON_ROTATION_ACTIONS)
-    )
+
+    # filter according to direction
+    available_actions = get_available_actions(direction, do_rotation)
     action = random.choice(available_actions) if action is None else action
     direction_pool = ALLOWED_DIRECTIONS.get(action, list(Direction))
     gendered_set = GENDERED_ASSETS.get(sex, set())
@@ -95,7 +96,6 @@ def get_random_character(
     character["action_description"] = ACTION_DESCRIPTIONS[action]
     character["description"] = get_character_description(sex, characteristics)
     character["animation"] = get_character(**settings)
-    settings["do_rotation"] = False if do_rotation is None else do_rotation
     character["settings"] = settings
 
     return character

@@ -39,7 +39,10 @@ def test_generate(params):
             settings = generated_character["settings"]
 
             for param_name, param_value in curr_input.items():
-                assert settings[param_name] == param_value
+                if param_name == "do_rotation" and param_value:
+                    assert "rotation_column" in settings
+                else:
+                    assert settings[param_name] == param_value
 
             assert isinstance(animation[0], (Image.Image, np.ndarray))
 
