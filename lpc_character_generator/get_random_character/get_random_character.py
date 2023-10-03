@@ -13,7 +13,6 @@ from lpc_character_generator.constants import (
     ALLOWED_DIRECTIONS,
     ACTION_DESCRIPTIONS,
     NON_OPTIONAL_ASSETS,
-    NON_ROTATION_ACTIONS,
     ASSET_COMPLEMENTARITY,
 )
 

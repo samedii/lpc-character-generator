@@ -62,6 +62,9 @@ class ClothingState(str, Enum):
     P_CLOTHED = "partially clothed"
 
 
+PATH_TO_DATA = importlib.resources.files("lpc_character_generator") / "data"
+PATH_TO_ICONS = PATH_TO_DATA / "Icons"
+
 SHARED_ASSETS = {
     Asset.EYES,
     Asset.HEAD,
@@ -158,8 +161,6 @@ ASSET_COMPLEMENTARITY = {
     Asset.SHIELD_PAINT: (Asset.SHIELD_BASE, {}),
     Asset.SHIELD_PATTERN: (Asset.SHIELD_BASE, {}),
 }
-
-PATH_TO_DATA = importlib.resources.files("lpc_character_generator") / "data"
 
 FRAME_SIZE = 128
 ROTATION_ORDER = [Direction.SOUTH, Direction.EAST, Direction.NORTH, Direction.WEST]
