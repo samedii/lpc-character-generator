@@ -13,7 +13,7 @@ from lpc_character_generator.constants import (
 from lpc_character_generator.image_utilities import get_frame, add_asset
 
 _TEST_ASSETS = {
-    "hair": "balding blue",
+    "hair": "balding head blue",
     "neck": "bowtie amber",
     "over_shirt": "cardigan amethyst",
     "pants": "cuffed pants charcoal",
@@ -21,7 +21,7 @@ _TEST_ASSETS = {
     "shoes": "shoes ice",
     "eyebrows": "thick blonde",
     "eyes": "eyes gray",
-    "head": "bascinet closed gold",
+    "head": "bascinet closed helmet gold",
     "head_accessory": "bascinet plumage coffee",
     "shield_base": "brown",
     "shield_paint": "apple",
