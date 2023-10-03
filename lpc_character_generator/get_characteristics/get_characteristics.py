@@ -1,3 +1,5 @@
+from .get_item_characteristics import get_item_characteristics
+
 from lpc_character_generator.constants import Asset, NO_DESCRIPTION_ASSETS
 
 
@@ -9,10 +11,6 @@ def get_characteristics(settings: dict):
         if key not in asset_set or key in NO_DESCRIPTION_ASSETS:
             continue
 
-        split_value = value.split()
-        characteristics[key] = {
-            "color": split_value[-1],
-            "name": " ".join(split_value[:-1]),
-        }
+        characteristics[key] = get_item_characteristics(value)
 
     return characteristics

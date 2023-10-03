@@ -1,1 +1,2 @@
 from .get_characteristics import get_characteristics
+from .get_item_characteristics import get_item_characteristics
