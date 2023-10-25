@@ -3,6 +3,7 @@ import numpy as np
 import lpc_character_generator as generator
 
 from PIL import Image
+from pathlib import Path
 from lpc_character_generator.constants import (
     Direction,
     Action,
@@ -28,6 +29,7 @@ _TEST_ASSETS = {
     "shield_pattern": "barry apricot",
     "facial_hair": "chevron mustache blonde",
     "shield_trim": "copper",
+    "sword": "sword brass",
 }
 
 
@@ -40,12 +42,22 @@ def default_character():
 @pytest.mark.parametrize("direction", list(Direction))
 def test_direction_create(default_character, asset, direction):
     asset_type, asset_name = asset
-    path_to_asset = f"tests/assets/{asset_type}.png"
+    path_to_asset = Path(f"tests/assets/{asset_type}.png")
     additional_asset = Image.open(path_to_asset)
     additional_frames = [
         get_frame(DEFAULT_DIRECTION_ROW[direction], i, additional_asset)
         for i in range(2)
     ]
+    path_to_behind = Path(f"tests/assets/behind {asset_type}.png")
+    behind_asset = None
+
+    if path_to_behind.exists():
+        behind_asset = Image.open(path_to_behind)
+        behind_frames = [
+            get_frame(DEFAULT_DIRECTION_ROW[direction], i, behind_asset)
+            for i in range(2)
+        ]
+
     default_character["direction"] = direction
     new_character_settings = default_character.copy()
     new_character_settings[asset_type] = asset_name
@@ -55,6 +67,11 @@ def test_direction_create(default_character, asset, direction):
     test_character = [
         add_asset(base, new) for new, base in zip(additional_frames, base_character)
     ]
+
+    if behind_asset is not None:
+        test_character = [
+            add_asset(base, new) for new, base in zip(test_character, behind_frames)
+        ]
 
     np_new = [np.array(frame) for frame in new_character]
     np_test = [np.array(frame) for frame in test_character]
@@ -72,6 +89,16 @@ def test_rotation_create(default_character, asset, rotation_column):
     additional_frames = [
         get_frame(i, rotation_column, additional_asset) for i in index_order
     ]
+
+    path_to_behind = Path(f"tests/assets/behind {asset_type}.png")
+    behind_asset = None
+
+    if path_to_behind.exists():
+        behind_asset = Image.open(path_to_behind)
+        behind_frames = [
+            get_frame(i, rotation_column, behind_asset) for i in index_order
+        ]
+
     default_character["rotation_column"] = rotation_column
     new_character_settings = default_character.copy()
     new_character_settings[asset_type] = asset_name
@@ -81,6 +108,11 @@ def test_rotation_create(default_character, asset, rotation_column):
     test_character = [
         add_asset(base, new) for new, base in zip(additional_frames, base_character)
     ]
+
+    if behind_asset is not None:
+        test_character = [
+            add_asset(base, new) for new, base in zip(test_character, behind_frames)
+        ]
 
     np_new = [np.array(frame) for frame in new_character]
     np_test = [np.array(frame) for frame in test_character]
