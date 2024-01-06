@@ -1,1 +1,3 @@
 from .get_path_to_asset_type import get_path_to_asset_type
+from .extract_rotation_points import extract_rotation_points
+from .extract_direction_points import extract_direction_points

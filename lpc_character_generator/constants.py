@@ -63,7 +63,10 @@ class ClothingState(str, Enum):
 
 
 PATH_TO_DATA = importlib.resources.files("lpc_character_generator") / "data"
+
 PATH_TO_ICONS = PATH_TO_DATA / "Icons"
+PATH_TO_EDGES = PATH_TO_DATA / "edge_configs.json"
+PATH_TO_SKELETON_TRACKING = PATH_TO_DATA / "points" / "skeleton"
 
 SHARED_ASSETS = {
     Asset.EYES,
