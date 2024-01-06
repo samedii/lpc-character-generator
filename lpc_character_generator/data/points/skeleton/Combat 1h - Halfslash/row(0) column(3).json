@@ -1,0 +1,92 @@
+[
+    {
+        "label": "LEFT LEG",
+        "x": 59,
+        "y": 86
+    },
+    {
+        "label": "RIGHT LEG",
+        "x": 69,
+        "y": 86
+    },
+    {
+        "label": "RIGHT KNEE",
+        "x": 67,
+        "y": 82
+    },
+    {
+        "label": "RIGHT HIP",
+        "x": 67,
+        "y": 77
+    },
+    {
+        "label": "RIGHT SHOULDER",
+        "x": 67,
+        "y": 66
+    },
+    {
+        "label": "RIGHT ELBOW",
+        "x": 69,
+        "y": 61
+    },
+    {
+        "label": "RIGHT ARM",
+        "x": 68,
+        "y": 57
+    },
+    {
+        "label": "RIGHT EAR",
+        "x": 69,
+        "y": 56
+    },
+    {
+        "label": "LEFT KNEE",
+        "x": 58,
+        "y": 80
+    },
+    {
+        "label": "LEFT HIP",
+        "x": 59,
+        "y": 76
+    },
+    {
+        "label": "LEFT SHOULDER",
+        "x": 56,
+        "y": 66
+    },
+    {
+        "label": "LEFT ELBOW",
+        "x": 52,
+        "y": 69
+    },
+    {
+        "label": "LEFT ARM",
+        "x": 54,
+        "y": 66
+    },
+    {
+        "label": "LEFT EAR",
+        "x": 53,
+        "y": 56
+    },
+    {
+        "label": "NECK",
+        "x": 61,
+        "y": 64
+    },
+    {
+        "label": "NOSE",
+        "x": 61,
+        "y": 60
+    },
+    {
+        "label": "LEFT EYE",
+        "x": 57,
+        "y": 58
+    },
+    {
+        "label": "RIGHT EYE",
+        "x": 65,
+        "y": 58
+    }
+]
