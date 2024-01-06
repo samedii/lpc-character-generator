@@ -29,7 +29,6 @@ def run_point_test(inputs, is_rotation_test=False):
             character_with_points_visualized["skeleton_animation"]
         )
 
-        print(character_with_points["skeleton_points"])
         assert len(generated_character["animation"]) == len(
             character_with_points["skeleton_points"]
         ) and len(generated_character["animation"]) == len(
