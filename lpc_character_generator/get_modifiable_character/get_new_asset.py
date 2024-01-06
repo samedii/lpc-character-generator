@@ -1,6 +1,6 @@
 import random
 
-from lpc_character_generator.constants import ASSET_COMPLEMENTARITY
+from lpc_character_generator.constants import Asset, ASSET_COMPLEMENTARITY
 from lpc_character_generator.get_random_character.get_available_assets import (
     get_available_assets,
 )
@@ -9,7 +9,7 @@ from lpc_character_generator.get_random_character.get_by_complementarity import 
 )
 
 
-def get_new_asset(base_settings, asset_type):
+def get_new_asset(base_settings: dict, asset_type: Asset):
     sex = base_settings["sex"]
     action = base_settings["action"]
     is_complementary = asset_type in ASSET_COMPLEMENTARITY
