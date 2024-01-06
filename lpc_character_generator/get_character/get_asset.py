@@ -24,6 +24,7 @@ def get_asset(
     path_to_asset = path_to_subtype / color / file_ending
 
     behind = fetch_behind(path_to_subtype, color, file_ending)
+    print(asset_name, "|", path_to_subtype, "|", color, "|", file_ending)
     asset = Image.open(path_to_asset)
 
     return asset, behind
