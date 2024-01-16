@@ -1,0 +1,244 @@
+{
+  "version": "5.2.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "LEFT LEG",
+      "points": [
+        [
+          51.300000000000004,
+          89.2
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "point",
+      "flags": {}
+    },
+    {
+      "label": "LEFT KNEE",
+      "points": [
+        [
+          52.4,
+          80.5
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "point",
+      "flags": {}
+    },
+    {
+      "label": "LEFT HIP",
+      "points": [
+        [
+          62.300000000000004,
+          80.2
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "point",
+      "flags": {}
+    },
+    {
+      "label": "LEFT SHOULDER",
+      "points": [
+        [
+          63.800000000000004,
+          70.8
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "point",
+      "flags": {}
+    },
+    {
+      "label": "LEFT ELBOW",
+      "points": [
+        [
+          60.9,
+          76.7
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "point",
+      "flags": {}
+    },
+    {
+      "label": "LEFT ARM",
+      "points": [
+        [
+          55.300000000000004,
+          77.7
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "point",
+      "flags": {}
+    },
+    {
+      "label": "LEFT EAR",
+      "points": [
+        [
+          66.0,
+          60.599999999999994
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "point",
+      "flags": {}
+    },
+    {
+      "label": "LEFT EYE",
+      "points": [
+        [
+          58.4,
+          62.5
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "point",
+      "flags": {}
+    },
+    {
+      "label": "RIGHT LEG",
+      "points": [
+        [
+          51.9,
+          86.8
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "point",
+      "flags": {}
+    },
+    {
+      "label": "RIGHT HIP",
+      "points": [
+        [
+          62.9,
+          78.6
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "point",
+      "flags": {}
+    },
+    {
+      "label": "NECK",
+      "points": [
+        [
+          62.300000000000004,
+          67.2
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "point",
+      "flags": {}
+    },
+    {
+      "label": "RIGHT SHOULDER",
+      "points": [
+        [
+          59.99999999999999,
+          68.7
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "point",
+      "flags": {}
+    },
+    {
+      "label": "RIGHT ELBOW",
+      "points": [
+        [
+          58.99999999999999,
+          74.3
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "point",
+      "flags": {}
+    },
+    {
+      "label": "RIGHT ARM",
+      "points": [
+        [
+          55.4,
+          77.6
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "point",
+      "flags": {}
+    },
+    {
+      "label": "NOSE",
+      "points": [
+        [
+          54.9,
+          63.7
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "point",
+      "flags": {}
+    },
+    {
+      "label": "RIGHT EYE",
+      "points": [
+        [
+          57.9,
+          62.0
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "point",
+      "flags": {}
+    },
+    {
+      "label": "RIGHT EAR",
+      "points": [
+        [
+          65.4,
+          59.8
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "point",
+      "flags": {}
+    },
+    {
+      "label": "RIGHT KNEE",
+      "points": [
+        [
+          52.699999999999996,
+          80.2
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "point",
+      "flags": {}
+    }
+  ],
+  "imagePath": "row(1) column(0).png",
+  "imageData": "iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAE90lEQVR4nO3bT2gjVRwH8G923ZOaNhvbmASTkJAlGxdzkBY3shax1tuyh14Ke82hUrzvYa8ePWhP5iwR7CEUPbhWtAqxVi8DoQ0MlSSQFFt22wa6lIYwHmbfZPKnmzbSzc57388tmaFM+/u933vze68AERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERvVCuUT/AixC47jUG3VN/8liJv0U3qX9pEfh7r17FRCqIVNiNeCRgXdfLdWiVBva1GvLHLSWTQNpfOHDda4jAz88knnuvSIRsoapcErwy6ge4DCL4s3dvWiPe448BAA52d3ruF/fc064iD6+hUhJcGfUDXJZ+wR9kIhW8zEd6KUmXAGL02+f687jo/bKQcgroHsn9yn4/qbBbuWlAugoAmIEclmrTgJQJMGw5V3EakDIBLmplvYSV9RKA/1c9nEjKNUA/Z70G6uU6AGB+JmElgUqkTAC9XO/t+NlGuLhmD76gWjNIygTQKg0A5pyul+tYyhUBmC1h7dk9Igk6ewXqVQDp1gD1J49d2ULV+qxVGph6mAMAXPlFw75WA9Ae/Xq5Do8/huy3P1jXVCJlBRCNIDGqg1/cx58f3MdXsTdR/OwjAO0EAIDPH3wNAEpuCElXAQSPP4aD3R2kwm5MpIL46f091L55aF3vfuVTMfiAIruBAHp2BLu3gsevjbm2/v1nFI86UlJOAYC5FsjDayw/e69fWS9hfibREXjAHPkqk7YCCJ++NXnmaSBxSGQpV8R7kbCrVDuEalVA2gog/Hr6mms6PolHW7phPxlkl0mHkC1UjPFrY9IPiG7SJwAAPNrSjUw61BP46dt32p3BApAIjgOIKlUFpH0LAICkL4p3UzcAmIvAeCRgrf7twdcqDWTSIWyUKwMPj8pG6gQAgJ///sv48cFcx3eiU0gKJICd2BDa12rW6NfLdSU7gIISawAR+M0/fsfa6jYWbd1A1auBlAmQ9EU7Ph/s7lit3/xxC4vobASpdgrITropIOmL4uNPPsRh88g4bB4ZAKx9/qVcEfb1gOrBBySrACL4332fNza/XLRG/trqNpYKVSv49tKfCruVngakaHzYS/5h88gKvmDf+RPB3tdqmL17s+P7bKGq3J6ANBVAlHvAXOx1n/qxBx5AR/BV5vgESPqiSATHsVE+wvLCLbPc54rIpNtl3f6a1y/w9s0h1Tg+AQBgo1wxMukQpm/fQTwSwKztGBhg9voHnfbNH7fw9tiEq/b09LIf96UiRQIA5mJOzPvxSADLC+b3ovTbF3oiGbqnhdrTU6X2AQAJXwOB9mvfWat7rdLoCH7+uIUpr0+KBfFFObYCdDd77FJhN9ZWt8992GPK63PpjRPlRj/g0ARI+qIQe/z9rmuVBvLHLdx4/Q3X3klz4M9TNfiAQxMAaO/xixJuP+Qp5vS9k6aygT0vR64B3olNAjD/i6e7zOvlurWiH8WzOY0jK8BvJd1YXrgFoHehJz6ruKIfhiMTAID1jx/xSGfLV9WGzrAcOQUA5qvewe4OPP4YPP6Y1fJVfXfvohxZAeaScVe2oBvZQhWZdAgAd/WG5ciFkugBmHsAvQc555Jx16a+xzXAOTgyAYTnNYMYfCIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiJyuP8AXwcjhYQbL0MAAAAASUVORK5CYII=",
+  "imageHeight": 128,
+  "imageWidth": 128
+}

@@ -1,0 +1,154 @@
+{
+  "version": "5.2.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "RIGHT LEG",
+      "points": [[67.5, 90.2]],
+      "group_id": null,
+      "description": "",
+      "shape_type": "point",
+      "flags": {}
+    },
+    {
+      "label": "RIGHT KNEE",
+      "points": [[66.5, 84.7]],
+      "group_id": null,
+      "description": "",
+      "shape_type": "point",
+      "flags": {}
+    },
+    {
+      "label": "RIGHT HIP",
+      "points": [[63.099999999999994, 79.39999999999999]],
+      "group_id": null,
+      "description": "",
+      "shape_type": "point",
+      "flags": {}
+    },
+    {
+      "label": "RIGHT SHOULDER",
+      "points": [[61.5, 69.8]],
+      "group_id": null,
+      "description": "",
+      "shape_type": "point",
+      "flags": {}
+    },
+    {
+      "label": "RIGHT ELBOW",
+      "points": [[60.599999999999994, 73.1]],
+      "group_id": null,
+      "description": "",
+      "shape_type": "point",
+      "flags": {}
+    },
+    {
+      "label": "RIGHT ARM",
+      "points": [[63.099999999999994, 75.8]],
+      "group_id": null,
+      "description": "",
+      "shape_type": "point",
+      "flags": {}
+    },
+    {
+      "label": "RIGHT EAR",
+      "points": [[60.599999999999994, 61.89999999999999]],
+      "group_id": null,
+      "description": "",
+      "shape_type": "point",
+      "flags": {}
+    },
+    {
+      "label": "RIGHT EYE",
+      "points": [[68.6, 63.89999999999999]],
+      "group_id": null,
+      "description": "",
+      "shape_type": "point",
+      "flags": {}
+    },
+    {
+      "label": "LEFT LEG",
+      "points": [[56.5, 85.6]],
+      "group_id": null,
+      "description": "",
+      "shape_type": "point",
+      "flags": {}
+    },
+    {
+      "label": "LEFT KNEE",
+      "points": [[61.400000000000006, 84.0]],
+      "group_id": null,
+      "description": "",
+      "shape_type": "point",
+      "flags": {}
+    },
+    {
+      "label": "LEFT HIP",
+      "points": [[63.900000000000006, 79.5]],
+      "group_id": null,
+      "description": "",
+      "shape_type": "point",
+      "flags": {}
+    },
+    {
+      "label": "LEFT SHOULDER",
+      "points": [[66.6, 69.5]],
+      "group_id": null,
+      "description": "",
+      "shape_type": "point",
+      "flags": {}
+    },
+    {
+      "label": "LEFT ELBOW",
+      "points": [[67.0, 74.2]],
+      "group_id": null,
+      "description": "",
+      "shape_type": "point",
+      "flags": {}
+    },
+    {
+      "label": "LEFT ARM",
+      "points": [[71.5, 74.39999999999999]],
+      "group_id": null,
+      "description": "",
+      "shape_type": "point",
+      "flags": {}
+    },
+    {
+      "label": "LEFT EYE",
+      "points": [[69.30000000000001, 62.599999999999994]],
+      "group_id": null,
+      "description": "",
+      "shape_type": "point",
+      "flags": {}
+    },
+    {
+      "label": "LEFT EAR",
+      "points": [[62.69999999999999, 58.5]],
+      "group_id": null,
+      "description": "",
+      "shape_type": "point",
+      "flags": {}
+    },
+    {
+      "label": "NOSE",
+      "points": [[72.0, 64.8]],
+      "group_id": null,
+      "description": "",
+      "shape_type": "point",
+      "flags": {}
+    },
+    {
+      "label": "NECK",
+      "points": [[64.5, 67.8]],
+      "group_id": null,
+      "description": "",
+      "shape_type": "point",
+      "flags": {}
+    }
+  ],
+  "imagePath": "row(3) column(5).png",
+  "imageData": "iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAFYUlEQVR4nO3cTUgjVwAH8P+stYdK41etNQGTVVKyWSWwqLSWGsq6erMe7EFY9uZBEO8e9lpvPVjpluZcIqwHETysa7FaSItbCrObdYUQMWmjmBC/wEVW7PSQvnFiYlZpSfS9/w8CmpnAi+8/7837GAEiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiKh6t1AUoBXtNrfG2czZ30kr8bZT4klb2mlqjv6IMdT4HfE4b3C67eSyysQk9doCUnsDM4QkA+YMg9Zc7S1T+8OjdguedDYLMIXin1AUoFlH53X23AADVDc0AgN2taM65ZqvgtAGzrzCDWkPWENwodQGKqbvvFtwuu1n5hYgQiMDISqkAWPv7y5zfX1F2oRvH60iJLsBeU2sMdTaav+dr9gup8zmAUPz/LtaVoEwL4HPaSvLZq06ZAFy2+f+vn7sulAmAML20humltVIX48pQJgCi4gf8HgCZsf5Z1Q3NeUcIMrcCSgRgcyetBSw3cflCENnYRGBqDoGpuZxw5AuLLJQIgJW4ws+bAg6E4hgJhs1KF8dkpVQAUnoCgak5VDc0Z1WwOHZjUQcAtD8MZlV6IBSXdjpYmQBs7qS1mcMTpPQEvh77IeuY22XH8OhdfNv8Ef7uug/HN/cBZFoLt8uO/oqyUhS5KJQJAHAaAitrV5D48SGefpY0Vwp3t6IXmja+zqRs1grx1jdh73j/3CVhAOYwUYXVQKVaAG99E7p8p1PCKT2BhdlXmF5aM+8FppfW4HPa4HPapK98QKEWwFvfhHv+O3i8sGhMDraY74u7/3y++zMp/d9HicUgceU/Xlg0noz1AMjc4JmLQv/O9euxAwRCcfR43dpKJAkgWaISF48SAQCA2d9fmFe+tfLP9v9DaEQgFDGqyiulv/oBxe4BRGXvbkWz+n3rcTFLCGRaDvGSlVIBsBJTw+cN8/aO9w3xuue/U8yiFZUyXQCQmfUTrcDkYAtGgmEgGMbKxDCA7I0ik4Mt6Pj0c+xuRdE7Pm9A0htmZVqAvrZWzTrH73bZsTIxjCdjPegYfYSVX3/J+Uy+92SjRABWt9exrMfR5XFnhcA60yc2i4rfxVqAzCuBgGJdQHprz/xZdAfWZn93K2pWeCAUB0KZ9/vaWrXv538uYkmLR4kWQHi5nzL6K8oyfT8yIXg08VPWOSPBMNpv3tSqyivN17Iu54ZQQLEWAMjs8x922dE7Pm++JyaHzCXiv3awur1ekvIVm3IBEESlA6cVPxIMo8vj1p5H5Z8BFJTqAgC8dXfP82hSmasfUCAA1pm82/V2LRCK550BHAmG8aDXL+VYvxBpv7CodMd77+Llfirnsa7JwZacdYDe8Xl81f2F9nTpD2VaAWkD8KXbi2fpbQPIPNtX53OYx8RGj/NCUFVeqakSAGm7gGfpbaO/ogxDnY05T/jW+RwQw8HIxmbOBlGVSBsAAOaWLwBZmz6s/wHEOiegIqWGgdaHQ25X1mmJ12+wd7xv6LEDqR8ALUTqAPgsO31mDk/w8fsfaMmjYwBA4vWbnPPFENHjqALQpMSNoNRdgCCa/+TRMVa3180XAHzicpqPjfmcNgx1NuK3jZjhcVRJvxkEkLgFyCz/vjCHf+219Vrk4CjrnEwITivY7bKbo4JAKGYAQI/XrZ2eKx9pA7Csx2Hd1xc5OLpwJQ74PRjwezC9tCb9/kBpA3DZK1aPHeTMCficNnNJWFbSJvuivPVN6HB/iPnVSN5/AtXX1qot63FpuwAiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiurL+AVrfK3RV0C1eAAAAAElFTkSuQmCC",
+  "imageHeight": 128,
+  "imageWidth": 128
+}
