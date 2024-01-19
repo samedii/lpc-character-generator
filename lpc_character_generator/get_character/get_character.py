@@ -18,6 +18,7 @@ def get_character(
     is_rotation: bool,
     direction: Direction = None,
     rotation_column: int = None,
+    head: str = None,
     hair: str = None,
     neck: str = None,
     head_accessory: str = None,
@@ -38,6 +39,7 @@ def get_character(
     helmet_accessory: str = None,
 ) -> list[Image.Image]:
     asset_type_to_value = {
+        Asset.HEAD: head,
         Asset.BODY: body,
         Asset.HAIR: hair,
         Asset.NECK: neck,

@@ -18,6 +18,7 @@ from lpc_character_generator.constants import (
 
 from .skip_asset import skip_asset
 from .should_rotate import should_rotate
+from .add_body_asset import add_body_asset
 from .assets_conflict import assets_conflict
 from .get_random_column import get_random_column
 from .get_available_assets import get_available_assets
@@ -46,13 +47,19 @@ def get_random_character(
     # filter according to direction
     available_actions = get_available_actions(direction, do_rotation)
     action = random.choice(available_actions) if action is None else action
-    direction_pool = ALLOWED_DIRECTIONS.get(action, list(Direction))
+
+    add_body_asset(included_assets, sex, action)
     gendered_set = GENDERED_ASSETS.get(sex, set())
-    possible_assets = [x for x in PUT_ON_ORDER if x not in gendered_set]
+    possible_assets = [
+        asset
+        for asset in PUT_ON_ORDER
+        if asset not in gendered_set and asset not in included_assets
+    ]
 
     if direction is None and do_rotation is None:
         do_rotation = should_rotate(action)
 
+    direction_pool = ALLOWED_DIRECTIONS.get(action, list(Direction))
     if not do_rotation and direction is None:
         direction = random.choice(direction_pool)
 
@@ -81,11 +88,8 @@ def get_random_character(
 
         chosen_asset = random.choice(available_assets)
 
-        settings[asset_type] = chosen_asset
         included_assets[asset_type] = chosen_asset
 
-    settings["sex"] = sex
-    settings["action"] = action
     if direction is not None:
         settings["direction"] = direction
 
@@ -94,6 +98,10 @@ def get_random_character(
         settings["rotation_column"] = get_random_column(action)
     else:
         settings["is_rotation"] = False
+
+    settings["sex"] = sex
+    settings["action"] = action
+    settings.update(included_assets)
 
     characteristics = get_characteristics(included_assets)
 

@@ -35,6 +35,7 @@ class Action(str, Enum):
 
 
 class Asset(str, Enum):
+    HEAD = "head"
     BODY = "body"
     HAIR = "hair"
     NECK = "neck"
@@ -63,6 +64,7 @@ class ClothingState(str, Enum):
 
 
 class ProbabilityType(str, Enum):
+    FIXED = "fixed"
     DEFAULT = "default"
     UNIFORM = "uniform"
 
@@ -88,18 +90,19 @@ SHARED_ASSETS = {
 
 PUT_ON_ORDER = [
     Asset.BODY,
-    Asset.EYES,
-    Asset.EYEBROWS,
     Asset.SHIRT,
     Asset.OVER_SHIRT,
     Asset.NECK,
+    Asset.SOCKS,
+    Asset.SHOES,
+    Asset.PANTS,
+    Asset.HEAD,
+    Asset.EYES,
+    Asset.EYEBROWS,
     Asset.FACIAL_HAIR,
     Asset.HAIR,
     Asset.HEAD_ACCESSORY,
     Asset.HELMET_ACCESSORY,
-    Asset.SOCKS,
-    Asset.SHOES,
-    Asset.PANTS,
     Asset.WINGS,
     Asset.SWORD,
     Asset.SHIELD_BASE,
@@ -108,7 +111,13 @@ PUT_ON_ORDER = [
     Asset.SHIELD_PATTERN,
 ]
 
-ASSET_SKIP_PROBABILITIES = {Asset.HAIR: ProbabilityType.UNIFORM}
+ASSET_SKIP_PROBABILITIES = {
+    Asset.HAIR: ProbabilityType.UNIFORM,
+    Asset.NECK: ProbabilityType.FIXED,
+    Asset.FACIAL_HAIR: ProbabilityType.FIXED,
+}
+
+FIXED_SKIP_PROBABILITIES = {Asset.NECK: 0.95, Asset.FACIAL_HAIR: 0.95}
 
 ACTION_TO_FILENAME = {
     Action.RUN: "Run",
@@ -175,7 +184,14 @@ ASSET_COMPLEMENTARITY = {
 FRAME_SIZE = 128
 ROTATION_ORDER = [Direction.SOUTH, Direction.EAST, Direction.NORTH, Direction.WEST]
 NON_ROTATION_ACTIONS = {Action.CLIMB}
-NON_OPTIONAL_ASSETS = {Asset.BODY, Asset.SHOES, Asset.SHIRT, Asset.SWORD, Asset.PANTS}
+NON_OPTIONAL_ASSETS = {
+    Asset.HEAD,
+    Asset.BODY,
+    Asset.SHOES,
+    Asset.SHIRT,
+    Asset.SWORD,
+    Asset.PANTS,
+}
 
 UNAVAILABLE_ACTIONS = {
     Direction.SOUTH: {Action.CLIMB},
@@ -186,6 +202,7 @@ ALLOWED_DIRECTIONS = {Action.CLIMB: [Direction.NORTH]}
 GENDERED_ASSETS = {Sex.WOMAN: {Asset.FACIAL_HAIR}}
 
 ASSET_TO_FILENAME = {
+    Asset.HEAD: "Head",
     Asset.BODY: "Body",
     Asset.HAIR: "Hair",
     Asset.NECK: "Neck",

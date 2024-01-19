@@ -16,7 +16,7 @@ def get_new_asset_type(base_settings):
     action = base_settings["action"]
     gendered_set = GENDERED_ASSETS.get(sex, set())
 
-    possible_items = set(list(Asset)) - {Asset.BODY}
+    possible_items = set(list(Asset)) - {Asset.BODY, Asset.HEAD}
     # it shouldn't be in conflict with any current assets
     # it shouldn't be a complementary asset
     # it shouldn't be incorrect sex asset

@@ -6,6 +6,7 @@ from lpc_character_generator.constants import (
     Asset,
     ProbabilityType,
     ASSET_SKIP_PROBABILITIES,
+    FIXED_SKIP_PROBABILITIES,
 )
 
 
@@ -17,9 +18,11 @@ def skip_asset(sex: Sex, asset_type: Asset) -> bool:
 
     if probability_type == ProbabilityType.DEFAULT:
         probability_threshold = 0.5
-    elif ProbabilityType.UNIFORM:
+    elif probability_type == ProbabilityType.UNIFORM:
         type_count = len(list(path_to_assets.iterdir())) + 1
         probability_threshold = 1 / type_count
+    elif probability_type == ProbabilityType.FIXED:
+        probability_threshold = FIXED_SKIP_PROBABILITIES[asset_type]
 
     random_num = random.random()
     return random_num < probability_threshold

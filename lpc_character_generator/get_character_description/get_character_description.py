@@ -9,7 +9,7 @@ from .get_holdable_description import get_holdable_description
 
 
 def get_character_description(sex: Sex, characteristics: dict) -> str:
-    body_characteristics = characteristics[Asset.BODY]
+    body_characteristics = characteristics[Asset.HEAD]
     age, color = body_characteristics["name"], body_characteristics["color"]
     base_description = f"{color} skinned {age} {sex.value}"
     general_description = get_with_description(characteristics)
