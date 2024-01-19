@@ -41,6 +41,7 @@ def default_character():
 @pytest.mark.parametrize("asset", _TEST_ASSETS.items())
 @pytest.mark.parametrize("direction", list(Direction))
 def test_direction_create(default_character, asset, direction):
+    default_character["is_rotation"] = False
     asset_type, asset_name = asset
     path_to_asset = Path(f"tests/assets/{asset_type}.png")
     additional_asset = Image.open(path_to_asset)
@@ -82,6 +83,7 @@ def test_direction_create(default_character, asset, direction):
 @pytest.mark.parametrize("asset", _TEST_ASSETS.items())
 @pytest.mark.parametrize("rotation_column", [0, 1, 2, 3])
 def test_rotation_create(default_character, asset, rotation_column):
+    default_character["is_rotation"] = True
     asset_type, asset_name = asset
     path_to_asset = f"tests/assets/{asset_type}.png"
     additional_asset = Image.open(path_to_asset)

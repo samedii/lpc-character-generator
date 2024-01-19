@@ -62,6 +62,11 @@ class ClothingState(str, Enum):
     P_CLOTHED = "partially clothed"
 
 
+class ProbabilityType(str, Enum):
+    DEFAULT = "default"
+    UNIFORM = "uniform"
+
+
 PATH_TO_DATA = importlib.resources.files("lpc_character_generator") / "data"
 
 PATH_TO_ICONS = PATH_TO_DATA / "Icons"
@@ -102,6 +107,10 @@ PUT_ON_ORDER = [
     Asset.SHIELD_PAINT,
     Asset.SHIELD_PATTERN,
 ]
+
+ASSET_SKIP_PROBABILITIES = {
+    Asset.HAIR: ProbabilityType.UNIFORM
+}
 
 ACTION_TO_FILENAME = {
     Action.RUN: "Run",
