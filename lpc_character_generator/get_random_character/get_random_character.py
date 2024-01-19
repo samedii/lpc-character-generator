@@ -16,6 +16,7 @@ from lpc_character_generator.constants import (
     ASSET_COMPLEMENTARITY,
 )
 
+from .skip_asset import skip_asset
 from .should_rotate import should_rotate
 from .assets_conflict import assets_conflict
 from .get_random_column import get_random_column
@@ -56,7 +57,7 @@ def get_random_character(
         direction = random.choice(direction_pool)
 
     for asset_type in possible_assets:
-        skip = random.randint(0, 1)
+        skip = skip_asset(sex, asset_type)
         is_optional = (
             asset_type not in non_optional_assets and asset_type not in to_include
         )
