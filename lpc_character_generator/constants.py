@@ -39,7 +39,7 @@ class Asset(str, Enum):
     HAIR = "hair"
     NECK = "neck"
     EYES = "eyes"
-    HEAD = "head"
+    HEAD_ACCESSORY = "head_accessory"
     WINGS = "wings"
     SHIRT = "shirt"
     PANTS = "pants"
@@ -53,7 +53,7 @@ class Asset(str, Enum):
     SHIELD_TRIM = "shield_trim"
     SHIELD_PAINT = "shield_paint"
     SHIELD_PATTERN = "shield_pattern"
-    HEAD_ACCESSORY = "head_accessory"
+    HELMET_ACCESSORY = "helmet_accessory"
 
 
 class ClothingState(str, Enum):
@@ -75,7 +75,7 @@ PATH_TO_SKELETON_TRACKING = PATH_TO_DATA / "points" / "skeleton"
 
 SHARED_ASSETS = {
     Asset.EYES,
-    Asset.HEAD,
+    Asset.HEAD_ACCESSORY,
     Asset.SWORD,
     Asset.WINGS,
     Asset.EYEBROWS,
@@ -83,20 +83,20 @@ SHARED_ASSETS = {
     Asset.SHIELD_TRIM,
     Asset.SHIELD_PAINT,
     Asset.SHIELD_PATTERN,
-    Asset.HEAD_ACCESSORY,
+    Asset.HELMET_ACCESSORY,
 }
 
 PUT_ON_ORDER = [
     Asset.BODY,
     Asset.EYES,
     Asset.EYEBROWS,
-    Asset.FACIAL_HAIR,
     Asset.SHIRT,
     Asset.OVER_SHIRT,
-    Asset.HAIR,
-    Asset.HEAD,
-    Asset.HEAD_ACCESSORY,
     Asset.NECK,
+    Asset.FACIAL_HAIR,
+    Asset.HAIR,
+    Asset.HEAD_ACCESSORY,
+    Asset.HELMET_ACCESSORY,
     Asset.SOCKS,
     Asset.SHOES,
     Asset.PANTS,
@@ -108,9 +108,7 @@ PUT_ON_ORDER = [
     Asset.SHIELD_PATTERN,
 ]
 
-ASSET_SKIP_PROBABILITIES = {
-    Asset.HAIR: ProbabilityType.UNIFORM
-}
+ASSET_SKIP_PROBABILITIES = {Asset.HAIR: ProbabilityType.UNIFORM}
 
 ACTION_TO_FILENAME = {
     Action.RUN: "Run",
@@ -163,12 +161,12 @@ CLIMB_DIRECTION_ROW = {Direction.NORTH: 0}
 DIRECTION_ROW = {Action.CLIMB: CLIMB_DIRECTION_ROW}
 
 CONFLICTING_ASSETS = {
-    Asset.HAIR: {Asset.HEAD, Asset.HEAD_ACCESSORY},
-    Asset.HEAD: {Asset.HAIR},
+    Asset.HAIR: {Asset.HELMET_ACCESSORY, Asset.HEAD_ACCESSORY},
     Asset.HEAD_ACCESSORY: {Asset.HAIR},
+    Asset.HELMET_ACCESSORY: {Asset.HAIR},
 }
 ASSET_COMPLEMENTARITY = {
-    Asset.HEAD_ACCESSORY: (Asset.HEAD, {"Bascinet", "Morion"}),
+    Asset.HELMET_ACCESSORY: (Asset.HEAD_ACCESSORY, {"Bascinet", "Morion"}),
     Asset.SHIELD_TRIM: (Asset.SHIELD_BASE, {}),
     Asset.SHIELD_PAINT: (Asset.SHIELD_BASE, {}),
     Asset.SHIELD_PATTERN: (Asset.SHIELD_BASE, {}),
@@ -192,7 +190,7 @@ ASSET_TO_FILENAME = {
     Asset.HAIR: "Hair",
     Asset.NECK: "Neck",
     Asset.EYES: "Eyes",
-    Asset.HEAD: "Head",
+    Asset.HEAD_ACCESSORY: "Head Accessory",
     Asset.WINGS: "Wings",
     Asset.SHIRT: "Shirt",
     Asset.PANTS: "Pants",
@@ -206,7 +204,7 @@ ASSET_TO_FILENAME = {
     Asset.SHIELD_TRIM: "Shield Trim",
     Asset.SHIELD_PAINT: "Shield Paint",
     Asset.SHIELD_PATTERN: "Shield Pattern",
-    Asset.HEAD_ACCESSORY: "Head Accessory",
+    Asset.HELMET_ACCESSORY: "Helmet Accessory",
 }
 
 NO_DESCRIPTION_ASSETS = {
@@ -219,7 +217,7 @@ NO_DESCRIPTION_ASSETS = {
 }
 WITH_ASSETS = [
     Asset.HAIR,
-    Asset.HEAD,
+    Asset.HEAD_ACCESSORY,
     Asset.WINGS,
     Asset.SOCKS,
     Asset.EYES,
@@ -228,7 +226,7 @@ WITH_ASSETS = [
     Asset.PANTS,
     Asset.SHOES,
     Asset.OVER_SHIRT,
-    Asset.HEAD_ACCESSORY,
+    Asset.HELMET_ACCESSORY,
 ]
 MAX_ITEMS = 2
 

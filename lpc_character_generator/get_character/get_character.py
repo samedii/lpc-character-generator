@@ -20,7 +20,7 @@ def get_character(
     rotation_column: int = None,
     hair: str = None,
     neck: str = None,
-    head: str = None,
+    head_accessory: str = None,
     eyes: str = None,
     wings: str = None,
     shirt: str = None,
@@ -35,13 +35,13 @@ def get_character(
     shield_trim: str = None,
     shield_paint: str = None,
     shield_pattern: str = None,
-    head_accessory: str = None,
+    helmet_accessory: str = None,
 ) -> list[Image.Image]:
     asset_type_to_value = {
         Asset.BODY: body,
         Asset.HAIR: hair,
         Asset.NECK: neck,
-        Asset.HEAD: head,
+        Asset.HEAD_ACCESSORY: head_accessory,
         Asset.EYES: eyes,
         Asset.WINGS: wings,
         Asset.SHIRT: shirt,
@@ -56,7 +56,7 @@ def get_character(
         Asset.SHIELD_TRIM: shield_trim,
         Asset.SHIELD_PAINT: shield_paint,
         Asset.SHIELD_PATTERN: shield_pattern,
-        Asset.HEAD_ACCESSORY: head_accessory,
+        Asset.HELMET_ACCESSORY: helmet_accessory,
     }
 
     final_frames = []

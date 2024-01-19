@@ -1,7 +1,12 @@
 import random
 
 from lpc_character_generator.general_utilities import get_path_to_asset_type
-from lpc_character_generator.constants import Sex, Asset, ProbabilityType, ASSET_SKIP_PROBABILITIES
+from lpc_character_generator.constants import (
+    Sex,
+    Asset,
+    ProbabilityType,
+    ASSET_SKIP_PROBABILITIES,
+)
 
 
 def skip_asset(sex: Sex, asset_type: Asset) -> bool:
