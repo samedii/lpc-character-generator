@@ -1,8 +1,8 @@
 [tool.poetry]
 name = "lpc-character-generator"
-version = "0.2.1"
+version = "0.2.2"
 description = ""
-authors = ["Richard Löwenström <samedii@gmail.com>"]
+authors = ["Zuka Chilachava", "Richard Löwenström <samedii@gmail.com>"]
 readme = "README.md"
 packages = [
     { include = "lpc_character_generator" }
