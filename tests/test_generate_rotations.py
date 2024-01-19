@@ -4,5 +4,5 @@ import numpy as np
 
 
 def test_generate_rotations():
-    for _ in range(20):
-        generate(do_rotation=True)
+    for i in range(20):
+        generate(is_rotation=True)

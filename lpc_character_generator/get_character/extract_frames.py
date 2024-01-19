@@ -10,6 +10,7 @@ from lpc_character_generator.general_utilities import (
 
 
 def extract_frames(
+    is_rotation: bool,
     action_type: Action,
     direction: Optional[Direction],
     rotation_column: Optional[int],
@@ -19,7 +20,7 @@ def extract_frames(
     frame_count = int(image_width / FRAME_SIZE)
     extracted_points = (
         extract_rotation_points(rotation_column)
-        if direction is None
+        if is_rotation
         else extract_direction_points(action_type, direction, frame_count)
     )
 

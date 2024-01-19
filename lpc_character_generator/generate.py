@@ -3,6 +3,6 @@ from .get_random_character import get_random_character
 
 
 def generate(
-    action: Action = None, direction: Direction = None, do_rotation: bool = None
+    action: Action = None, direction: Direction = None, is_rotation: bool = None
 ):
-    return get_random_character(action, direction, do_rotation)
+    return get_random_character(action, direction, is_rotation)

@@ -18,7 +18,7 @@ def test_generate(params):
     direction_input = base_input.copy()
     direction_input["direction"] = direction
     rotation_input = base_input.copy()
-    rotation_input["do_rotation"] = True
+    rotation_input["is_rotation"] = True
     generated_characters = []
     character_prefixes = [
         "random_character",
@@ -39,10 +39,7 @@ def test_generate(params):
             settings = generated_character["settings"]
 
             for param_name, param_value in curr_input.items():
-                if param_name == "do_rotation" and param_value:
-                    assert "rotation_column" in settings
-                else:
-                    assert settings[param_name] == param_value
+                assert settings[param_name] == param_value
 
             assert isinstance(animation[0], (Image.Image, np.ndarray))
 

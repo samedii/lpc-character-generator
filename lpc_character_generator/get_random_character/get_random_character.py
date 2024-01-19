@@ -89,7 +89,11 @@ def get_random_character(
         settings["direction"] = direction
 
     if do_rotation:
+        settings["is_rotation"] = True
         settings["rotation_column"] = get_random_column(action)
+    else:
+        settings["is_rotation"] = False
+
     characteristics = get_characteristics(included_assets)
 
     character["action_description"] = ACTION_DESCRIPTIONS[action]

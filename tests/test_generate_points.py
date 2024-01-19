@@ -58,5 +58,5 @@ def test_point_rotations(action):
     if action in NON_ROTATION_ACTIONS:
         return
 
-    inputs = {"action": action, "do_rotation": True}
+    inputs = {"action": action, "is_rotation": True}
     run_point_test(inputs, is_rotation_test=True)

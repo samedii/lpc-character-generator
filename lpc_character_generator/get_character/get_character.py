@@ -15,6 +15,7 @@ def get_character(
     sex: Sex,
     action: Action,
     body: str,
+    is_rotation: bool,
     direction: Direction = None,
     rotation_column: int = None,
     hair: str = None,
@@ -66,9 +67,13 @@ def get_character(
             continue
 
         asset_front, asset_behind = get_asset(sex, action, asset_type, asset_name)
-        front_frames = extract_frames(action, direction, rotation_column, asset_front)
+        front_frames = extract_frames(
+            is_rotation, action, direction, rotation_column, asset_front
+        )
         back_frames = (
-            extract_frames(action, direction, rotation_column, asset_behind)
+            extract_frames(
+                is_rotation, action, direction, rotation_column, asset_behind
+            )
             if asset_behind is not None
             else None
         )
