@@ -4,51 +4,68 @@ import numpy as np
 import lpc_character_generator as generator
 
 from PIL import Image
-from itertools import product
-from lpc_character_generator.constants import Action, Direction
+from lpc_character_generator.constants import Action, Direction, ALLOWED_DIRECTIONS, NON_ROTATION_ACTIONS
 
-_FULL_ACTIONS = set(Action) - {Action.CLIMB}
-_TEST_SETTINGS = list(product(_FULL_ACTIONS, Direction))
+_ROTATION_ACTIONS = set(Action) - NON_ROTATION_ACTIONS
 
 
-@pytest.mark.parametrize("params", _TEST_SETTINGS)
-def test_generate(params):
-    action, direction = params
-    base_input = {"action": action}
-    direction_input = base_input.copy()
-    direction_input["direction"] = direction
-    rotation_input = base_input.copy()
-    rotation_input["is_rotation"] = True
+def run_test(inputs, prefix):
     generated_characters = []
-    character_prefixes = [
-        "random_character",
-        "direction_character",
-        "rotation_character",
-    ]
-    inputs = [base_input, direction_input, rotation_input]
+
     start_time = time.time()
     n_times = 10
 
     for i in range(n_times):
-        for curr_input in inputs:
-            generated_character = generator.generate(**curr_input)
+        generated_character = generator.generate(**inputs)
 
-            animation = generated_character["animation"]
-            generated_characters.append(animation)
+        animation = generated_character["animation"]
+        generated_characters.append(animation)
 
-            settings = generated_character["settings"]
+        settings = generated_character["settings"]
 
-            for param_name, param_value in curr_input.items():
-                assert settings[param_name] == param_value
+        for param_name, param_value in inputs.items():
+            assert settings[param_name] == param_value
 
-            assert isinstance(animation[0], (Image.Image, np.ndarray))
+        if settings['is_rotation']:
+            assert generated_character.get('rotation_groups', None) is not None
+
+        assert isinstance(animation[0], (Image.Image, np.ndarray))
 
     end_time = time.time()
 
     for index, images in enumerate(generated_characters):
         animation = Image.fromarray(np.concatenate(images, axis=1))
         animation.save(
-            f"tests/results/{character_prefixes[index % len(inputs)]}_{index}.png"
+            f"tests/results/{prefix}_{index}.png"
         )
 
-    assert (end_time - start_time) / (len(inputs) * n_times) <= 0.1
+    assert (end_time - start_time) / n_times <= 0.1
+
+
+def test_full_random():
+    run_test({}, "random")
+
+
+@pytest.mark.parametrize("direction", Direction)
+@pytest.mark.parametrize("action", Action)
+def test_direction(action, direction):
+    inputs = {
+        "action": action,
+        "direction": direction
+    }
+    available_dirs = ALLOWED_DIRECTIONS.get(action, set(Direction))
+
+    if direction not in available_dirs:
+        return
+
+    run_test(inputs, f"{action}_{direction}")
+
+
+@pytest.mark.parametrize("action", _ROTATION_ACTIONS)
+def test_rotation(action):
+    inputs = {
+        "action": action,
+        "is_rotation": True
+    }
+
+    run_test(inputs, f"{action}_rotation")
