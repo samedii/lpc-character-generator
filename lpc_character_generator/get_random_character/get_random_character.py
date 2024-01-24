@@ -2,6 +2,7 @@ import random
 
 from typing import Optional
 from lpc_character_generator.get_character import get_character
+from lpc_character_generator.get_rotation_groups import get_rotation_groups
 from lpc_character_generator.get_characteristics import get_characteristics
 from lpc_character_generator.get_character_description import get_character_description
 from lpc_character_generator.constants import (
@@ -95,7 +96,9 @@ def get_random_character(
 
     if do_rotation:
         settings["is_rotation"] = True
-        settings["rotation_column"] = get_random_column(action)
+        rotation_column = get_random_column(action)
+        settings["rotation_column"] = rotation_column
+        character["rotation_groups"] = get_rotation_groups(action, rotation_column)
     else:
         settings["is_rotation"] = False
 
