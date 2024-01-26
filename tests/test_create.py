@@ -30,12 +30,13 @@ _TEST_ASSETS = {
     "facial_hair": "chevron mustache blonde",
     "shield_trim": "copper",
     "sword": "sword brass",
+    "head": "old porcelain"
 }
 
 
 @pytest.fixture
 def default_character():
-    return {"sex": Sex.MAN, "body": "old porcelain", "action": Action.COMBAT_IDLE}
+    return {"sex": Sex.MAN, "body": "porcelain", "action": Action.COMBAT_IDLE}
 
 
 @pytest.mark.parametrize("asset", _TEST_ASSETS.items())
