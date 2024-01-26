@@ -15,7 +15,7 @@ from lpc_character_generator.constants import (
 def get_asset(
     sex: Sex, action: Action, asset_type: Asset, asset_name: str
 ) -> tuple[Image.Image, Optional[Image.Image]]:
-    file_ending = f"{ACTION_TO_FILENAME[action]}.png"
+    file_ending = f"{ACTION_TO_FILENAME[action]}.webp"
     split_name = asset_name.split()
     color = split_name.pop().capitalize()
     subtype = " ".join([word.capitalize() for word in split_name])

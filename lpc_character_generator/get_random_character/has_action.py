@@ -11,6 +11,6 @@ def has_action(action: Action, path_to_assets: Path) -> bool:
             break
 
     file_stem_name = ACTION_TO_FILENAME[action]
-    potential_path = first_asset / f"{file_stem_name}.png"
+    potential_path = first_asset / f"{file_stem_name}.webp"
 
     return potential_path.exists()
