@@ -3,7 +3,7 @@ from PIL import Image, ImageDraw
 from lpc_character_generator.general_utilities.get_color import get_color
 
 
-def draw_points(image: Image, points: list[dict], scale_factor, dot_size=5):
+def draw_points(image: Image, points: list[dict], scale_factor, dot_size=2):
     draw = ImageDraw.Draw(image)
 
     for point_dict in points:
