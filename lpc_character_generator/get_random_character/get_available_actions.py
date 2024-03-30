@@ -1,5 +1,6 @@
 from typing import Optional
 
+from lpc_character_generator.get_rotation_groups import get_rotatable_actions
 from lpc_character_generator.constants import (
     Action,
     Direction,
@@ -8,7 +9,11 @@ from lpc_character_generator.constants import (
 )
 
 
-def get_available_actions(direction: Optional[Direction], do_rotation: Optional[bool]):
+def get_available_actions(
+    direction: Optional[Direction],
+    do_rotation: Optional[bool],
+    for_rotation_groups: bool,
+):
     # filter by rotation
     action_set = set(Action)
     available_actions = (
@@ -21,5 +26,8 @@ def get_available_actions(direction: Optional[Direction], do_rotation: Optional[
         if direction is None
         else available_actions - UNAVAILABLE_ACTIONS.get(direction, set())
     )
+
+    if for_rotation_groups:
+        available_actions = available_actions & get_rotatable_actions()
 
     return list(available_actions)

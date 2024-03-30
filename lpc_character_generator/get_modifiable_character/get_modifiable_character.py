@@ -22,7 +22,9 @@ def get_modifiable_character(
 
     # generate base character
     args = get_asset_args(clothing_state)
-    base_character = get_random_character(direction=direction, **args)
+    base_character = get_random_character(
+        for_rotation_groups=False, direction=direction, **args
+    )
     base_settings = base_character["settings"]
     sex = base_settings["sex"]
     base_frames = base_character["animation"]

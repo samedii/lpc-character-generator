@@ -75,7 +75,7 @@ PATH_TO_ICONS = PATH_TO_DATA / "Icons"
 PATH_TO_COLOR_NAMES = PATH_TO_DATA / "color_names.json"
 
 PATH_TO_EDGES = PATH_TO_DATA / "edge_configs.json"
-PATH_TO_ROTATION_GROUPS = PATH_TO_DATA / "rotation_groups"
+PATH_TO_ROTATION_GROUPS = PATH_TO_DATA / "rotation_groups.json"
 PATH_TO_SKELETON_TRACKING = PATH_TO_DATA / "points" / "skeleton"
 
 SHARED_ASSETS = {
