@@ -1,0 +1,107 @@
+{
+  "Backslash": {
+    "0": [["east", "north"]],
+    "1": [["east", "north"]],
+    "2": [["south", "east"]],
+    "3": [["south", "east", "north"]],
+    "4": [["south", "east", "north"]],
+    "5": [["south", "east", "north"]]
+  },
+  "Forward slash": {
+    "0": [["south", "east", "north"]],
+    "1": [["south", "east", "north"]],
+    "2": [["east", "north"]],
+    "3": [["east", "north"]],
+    "4": [["east", "north"]],
+    "5": [["east", "north"]]
+  },
+  "Halfslash": {
+    "0": [["south", "east", "north"]],
+    "1": [["south", "east", "north"]],
+    "2": [["east", "north"]],
+    "3": [["east", "north"]],
+    "4": [["east", "north"]],
+    "5": [["south", "east", "north"]]
+  },
+  "Combat Idle": {
+    "0": [["south", "east", "north"]],
+    "1": [["south", "east", "north"]]
+  },
+  "Slash": {
+    "0": [["south", "east", "north"]],
+    "1": [["south", "east", "north"]],
+    "2": [["east", "north"]],
+    "3": [["east", "north"]],
+    "4": [["north", "east"]],
+    "5": [["north", "east"]],
+    "6": [["south", "east", "north"]]
+  },
+  "Hands behind back": {
+    "0": [["south", "east", "west"]]
+  },
+  "Emote in air": {
+    "0": [["south", "east", "north", "west"]]
+  },
+  "Hands on hips": {
+    "0": [["south", "east", "north", "west"]]
+  },
+  "Idle": {
+    "0": [["south", "east", "north", "west"]],
+    "1": [["south", "east", "north", "west"]],
+    "2": [["south", "east", "north", "west"]]
+  },
+  "Jump": {
+    "0": [["south", "east", "north", "west"]],
+    "1": [["south", "east", "north", "west"]],
+    "2": [["south", "east", "north"]],
+    "3": [["south", "east", "north"]],
+    "4": [
+      ["south", "west"],
+      ["north", "east"]
+    ],
+    "5": [["south", "east", "north", "west"]]
+  },
+  "Swing": {
+    "0": [["south", "east", "north", "west"]],
+    "1": [
+      ["south", "east"],
+      ["north", "west"]
+    ],
+    "2": [],
+    "3": [
+      ["south", "east"],
+      ["north", "west"]
+    ],
+    "4": [["west", "north"]],
+    "5": [["west", "north"]]
+  },
+  "Run": {
+    "0": [["south", "north", "west"]],
+    "1": [["south", "north", "west"]],
+    "2": [["west", "north"]],
+    "3": [["south", "north", "west"]],
+    "4": [["south", "north", "west"]],
+    "5": [["south", "north", "west"]],
+    "6": [["west", "north"]],
+    "7": [["south", "north", "west"]]
+  },
+  "Sitting chair": {
+    "0": [["south", "east", "north", "west"]]
+  },
+  "Siting cross-leg": {
+    "0": [["south", "north"]]
+  },
+  "Sitting ground": {
+    "0": [["south", "west"]]
+  },
+  "Walk": {
+    "0": [["south", "north"]],
+    "1": [["south", "north"]],
+    "2": [["south", "north"]],
+    "3": [["south", "north", "west"]],
+    "4": [["south", "north"]],
+    "5": [["south", "north"]],
+    "6": [["south", "north"]],
+    "7": [["south", "north", "west"]]
+  }
+}
